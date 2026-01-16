@@ -12,8 +12,10 @@ const startServer = async () => {
     resolvers,
   });
 
+  const port = process.env.PORT ? parseInt(process.env.PORT) : 4000;
+
   const { url } = await startStandaloneServer(server, {
-    listen: { port: 4000 },
+    listen: { port },
     context: async () => ({}),
   } as any);
 
