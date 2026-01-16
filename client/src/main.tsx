@@ -6,7 +6,7 @@ import './index.css'
 import App from './App.tsx'
 
 const graphqlEndpoint = import.meta.env.PROD 
-  ? 'https://ecoregulate-backend-cvfscbhd2ga5c3.eastus-01.azurewebsites.net'
+  ? 'https://ecoregulate-backend-cvfvcbdhd2gga5c3.eastus-01.azurewebsites.net'
   : 'http://localhost:4000'
 
 const client = new ApolloClient({
