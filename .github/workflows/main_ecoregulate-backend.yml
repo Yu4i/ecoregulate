@@ -52,12 +52,9 @@ jobs:
           path: ./server-build
       
       - name: Login to Azure
-        uses: azure/login@v1
+        uses: azure/login@v2
         with:
-          client-id: ${{ fromJson(secrets.AZURE_CREDENTIALS).clientId }}
-          tenant-id: ${{ fromJson(secrets.AZURE_CREDENTIALS).tenantId }}
-          subscription-id: ${{ fromJson(secrets.AZURE_CREDENTIALS).subscriptionId }}
-          client-secret: ${{ fromJson(secrets.AZURE_CREDENTIALS).clientSecret }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
