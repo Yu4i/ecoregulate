@@ -62,4 +62,7 @@ jobs:
           app-name: 'ecoregulate-backend'
           slot-name: 'Production'
           package: ./server-build
-          
+      
+      - name: 'Configure Azure App Service Settings'
+        run: |
+          az webapp config appsettings set --resource-group EcoRegulateGroup --name ecoregulate-backend --settings COSMOS_ENDPOINT="${{ secrets.COSMOS_ENDPOINT }}" COSMOS_KEY="${{ secrets.COSMOS_KEY }}"
